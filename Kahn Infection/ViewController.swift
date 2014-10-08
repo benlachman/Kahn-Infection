@@ -8,7 +8,7 @@
 
 import UIKit
 
-let numberOfPeople = 100
+let numberOfPeople = 100 // 50 seems a bit sparse, 200 seems a bit crowded
 
 class ViewController: UIViewController, GraphTreeViewDataSource {
 	var graph = PersonGraph(size: numberOfPeople)
@@ -17,6 +17,8 @@ class ViewController: UIViewController, GraphTreeViewDataSource {
 	@IBOutlet weak var limitSlider: UISlider!
 	@IBOutlet weak var limitLabel: UILabel!
 	@IBOutlet weak var infectionTypeControl: UISegmentedControl!
+
+	// MARK: - Actions
 
 	@IBAction func refreshAction(sender: UIButton) {
 		graph = PersonGraph(size: numberOfPeople)
@@ -36,7 +38,7 @@ class ViewController: UIViewController, GraphTreeViewDataSource {
 		}
 	}
 
-	@IBAction func limitChanged(sender: UISlider) {
+	@IBAction func limitChangedAction(sender: UISlider) {
 		limitLabel.text = "\(Int(sender.value))"
 	}
 
@@ -54,6 +56,8 @@ class ViewController: UIViewController, GraphTreeViewDataSource {
 		self.view.setNeedsDisplay()
 	}
 
+	// MARK: - View Lifecycle
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -68,6 +72,8 @@ class ViewController: UIViewController, GraphTreeViewDataSource {
 		limitLabel.text = "\(Int(limitSlider.value))"
 	}
 
+	// MARK: - GraphTreeViewDataSource
+
 	func topLevelNodesInGraphTreeView(graphTreeView: GraphTreeView) -> [AnyObject] {
 		return graph.topLevelDoyens 
 	}
@@ -76,4 +82,3 @@ class ViewController: UIViewController, GraphTreeViewDataSource {
 		return PersonGraph.maximumNumberOfGraphLevels
 	}
 }
-

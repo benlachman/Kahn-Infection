@@ -12,20 +12,21 @@ import UIKit
 // MARK: - CGPoint conveinience extension
 
 extension CGPoint {
+	// finds the simple distance between two points
 	func distanceToPoint(point: CGPoint) -> CGFloat {
-		let xDist = point.x - self.x
-		let yDist = point.y - self.y
+		let xDistance = point.x - self.x
+		let yDistance = point.y - self.y
 
-		let distance = sqrt((xDist * xDist) + (yDist * yDist))
-
-		return distance
+		return sqrt((xDistance * xDistance) + (yDistance * yDistance)) // √(x^2+y^2)
 	}
 
+	// rotate point 60º clockwise around otherPoint to find a third point (equilateral to others)
+	// adapted from: http://stackoverflow.com/a/2862412/159801
 	func thirdPoint(otherPoint: CGPoint) -> CGPoint {
-		let s60 = CGFloat(sin(60.0 * M_PI / 180.0))
-		let c60 = CGFloat(cos(60.0 * M_PI / 180.0))
+		let sin60 = CGFloat(sin(60.0 * M_PI / 180.0))
+		let cos60 = CGFloat(cos(60.0 * M_PI / 180.0))
 
-		return CGPointMake(c60 * (self.x - otherPoint.x) - s60 * (self.y - otherPoint.y) + otherPoint.x, s60 * (self.x - otherPoint.x) + c60 * (self.y - otherPoint.y) + otherPoint.y)
+		return CGPointMake(cos60 * (self.x - otherPoint.x) - sin60 * (self.y - otherPoint.y) + otherPoint.x, sin60 * (self.x - otherPoint.x) + cos60 * (self.y - otherPoint.y) + otherPoint.y)
 	}
 }
 

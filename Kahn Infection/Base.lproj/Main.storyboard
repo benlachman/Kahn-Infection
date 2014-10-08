@@ -30,7 +30,7 @@
                             <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DbL-BK-tJh">
                                 <rect key="frame" x="365" y="563" width="188.5" height="31"/>
                                 <connections>
-                                    <action selector="limitChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Gfg-GQ-jIU"/>
+                                    <action selector="limitChangedAction:" destination="vXZ-lx-hvc" eventType="valueChanged" id="REf-93-ZHM"/>
                                 </connections>
                             </slider>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgx-CS-DnK">

@@ -192,7 +192,7 @@ private let _maximumNumberOfGraphLevels = Int.random(lower:3, upper:8) // 3 - 8 
 		var mostInfected = (person: randomPerson(onLevel: Int.random(lower: 0, upper: PersonGraph.maximumNumberOfGraphLevels)), numberInfected: 0)
 
 		for doyen in topLevelDoyens {
-			let most = doyen.mostInfected(intefectedStrain)
+			let most = doyen.mostInfectedAbecedarians(intefectedStrain)
 
 			if most.numberInfected > mostInfected.numberInfected {
 				mostInfected = most

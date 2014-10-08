@@ -49,6 +49,7 @@ import UIKit
 	}
 
 	func addAbecedarian(newAbecedarian: PersonOfLetters) {
+		// update infection strain appropriately
 		if newAbecedarian.infectionStrain < infectionStrain {
 			newAbecedarian.infectionStrain = infectionStrain
 		} else if newAbecedarian.infectionStrain > infectionStrain {
@@ -59,6 +60,7 @@ import UIKit
 	}
 
 	func addDoyen(newDoyen: PersonOfLetters) {
+		// update infection strain appropriately
 		if newDoyen.infectionStrain < infectionStrain {
 			newDoyen.infectionStrain = infectionStrain
 		} else if newDoyen.infectionStrain > infectionStrain {
@@ -93,10 +95,11 @@ import UIKit
 			}
 		}
 
+		// returns a tuple containing a person and their distance to the point
 		return closestToPoint
 	}
 
-	func mostInfected(infectedStrain: Int) -> (person: PersonOfLetters, numberInfected: Int) {
+	public func mostInfectedAbecedarians(infectedStrain: Int) -> (person: PersonOfLetters, numberInfected: Int) {
 		if abecedarians.count == 0 {
 			return (self, 0)
 		}
@@ -111,13 +114,14 @@ import UIKit
 		var mostInfected = (person: self, numberInfected: abecedariansInfected)
 
 		for abecedarian in abecedarians {
-			let most = abecedarian.mostInfected(infectedStrain)
+			let most = abecedarian.mostInfectedAbecedarians(infectedStrain)
 
 			if most.numberInfected > mostInfected.numberInfected {
 				mostInfected = most
 			}
 		}
 
+		// returns tuple containing a person and the number of their immediate abecedarians that are infected
 		return mostInfected
 	}
 
