@@ -9,9 +9,9 @@
 import UIKit
 
 
-@objc class PersonOfLetters: Node {
-	internal private(set) var doyens = [PersonOfLetters]() // An obscure, yet fun, word that means coach, http://www.merriam-webster.com/dictionary/doyen
-	internal private(set) var abecedarians = [PersonOfLetters]() // A fun, yet obscure, word that means pupil, http://www.merriam-webster.com/dictionary/abecedarian
+@objc public class PersonOfLetters: Node {
+	public private(set) var doyens = [PersonOfLetters]() // An obscure, yet fun, word that means coach, http://www.merriam-webster.com/dictionary/doyen
+	public private(set) var abecedarians = [PersonOfLetters]() // A fun, yet obscure, word that means beginner, http://www.merriam-webster.com/dictionary/abecedarian
 
 	var unlimitedInfection = true
 
@@ -72,7 +72,17 @@ import UIKit
 
 	// MARK: - Utilities
 
-	func randomAbecedarian() -> PersonOfLetters? {
+	public func subgraphCount() -> Int {
+		var count = 1 // self
+
+		for abecedarian in abecedarians {
+			count += abecedarian.subgraphCount()
+		}
+
+		return count
+	}
+
+	public func randomAbecedarian() -> PersonOfLetters? {
 		if abecedarians.count > 0 {
 			return abecedarians[Int.random(lower: 0, upper: abecedarians.count)]
 		} else {
@@ -80,7 +90,7 @@ import UIKit
 		}
 	}
 
-	func closestToPoint(point: CGPoint) -> (person: PersonOfLetters, distance: CGFloat) {
+	public func closestToPoint(point: CGPoint) -> (person: PersonOfLetters, distance: CGFloat) {
 		if abecedarians.count == 0 {
 			return (self, self.cachedPosition.distanceToPoint(point))
 		}

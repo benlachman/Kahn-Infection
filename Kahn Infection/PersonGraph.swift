@@ -11,8 +11,8 @@ import UIKit
 
 private let _maximumNumberOfGraphLevels = Int.random(lower:3, upper:8) // 3 - 8 levels in the graph
 
-@objc class PersonGraph {
-	internal private(set) var topLevelDoyens = [PersonOfLetters]()
+@objc public class PersonGraph {
+	public private(set) var topLevelDoyens = [PersonOfLetters]()
 	private var infectionStrain = 0
 
 	class var maximumNumberOfGraphLevels: Int {
@@ -21,7 +21,7 @@ private let _maximumNumberOfGraphLevels = Int.random(lower:3, upper:8) // 3 - 8 
 		}
 	}
 
-	convenience init(size: Int) {
+	public convenience init(size: Int) {
 		self.init()
 
 		buildGraph(size: size)
@@ -29,11 +29,11 @@ private let _maximumNumberOfGraphLevels = Int.random(lower:3, upper:8) // 3 - 8 
 
 	// MARK: - Infection algorithm methods
 
-	func totalInfection(startingWithPerson person: PersonOfLetters) {
+	public func totalInfection(startingWithPerson person: PersonOfLetters) {
 		person.infectionStrain = ++infectionStrain
 	}
 
-	func limitedInfection(startingWithPerson person: PersonOfLetters, targetNumber: Int) {
+	public func limitedInfection(startingWithPerson person: PersonOfLetters, targetNumber: Int) {
 		var numberInfected = person.abecedarians.count
 
 		person.unlimitedInfection = false
@@ -157,7 +157,7 @@ private let _maximumNumberOfGraphLevels = Int.random(lower:3, upper:8) // 3 - 8 
 
 	// MARK: - Ways To Find People
 
-	func randomPerson(onLevel level: Int) -> PersonOfLetters {
+	public func randomPerson(onLevel level: Int) -> PersonOfLetters {
 		// randomly traverse the graph to find a person
 		var doyen = topLevelDoyens[Int.random(lower: 0, upper: topLevelDoyens.count)]
 
@@ -172,7 +172,7 @@ private let _maximumNumberOfGraphLevels = Int.random(lower:3, upper:8) // 3 - 8 
 		return doyen
 	}
 
-	func personClosestToPoint(point: CGPoint) -> (person: PersonOfLetters, distance: CGFloat) {
+	public func personClosestToPoint(point: CGPoint) -> (person: PersonOfLetters, distance: CGFloat) {
 		// recursively traverse the graph finding the person that is closest to the point
 		var closestToPoint = (person: topLevelDoyens[0], distance: CGFloat.max)
 
@@ -187,7 +187,7 @@ private let _maximumNumberOfGraphLevels = Int.random(lower:3, upper:8) // 3 - 8 
 		return closestToPoint
 	}
 
-	func doyenWithMostInfectedAbecedarians(intefectedStrain: Int) -> PersonOfLetters {
+	public func doyenWithMostInfectedAbecedarians(intefectedStrain: Int) -> PersonOfLetters {
 		// recursively find the doyen with the most infected abecedarians, if there isn't one return a random person
 		var mostInfected = (person: randomPerson(onLevel: Int.random(lower: 0, upper: PersonGraph.maximumNumberOfGraphLevels)), numberInfected: 0)
 
