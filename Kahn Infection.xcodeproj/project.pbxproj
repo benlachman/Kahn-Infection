@@ -13,6 +13,10 @@
 		B5A17A2419E45FB0002D3C3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A17A2319E45FB0002D3C3D /* Images.xcassets */; };
 		B5A17A2719E45FB0002D3C3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A17A2519E45FB0002D3C3D /* LaunchScreen.xib */; };
 		B5A17A3319E45FB0002D3C3D /* Kahn_InfectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A17A3219E45FB0002D3C3D /* Kahn_InfectionTests.swift */; };
+		B5A17A3D19E45FC7002D3C3D /* PersonOfLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A17A3C19E45FC7002D3C3D /* PersonOfLetters.swift */; };
+		B5A17A4019E4CDF6002D3C3D /* SwiftRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A17A3F19E4CDF5002D3C3D /* SwiftRandom.swift */; };
+		B5A17A4219E4D54B002D3C3D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A17A4119E4D54B002D3C3D /* GraphView.swift */; };
+		B5A17A4419E50DDF002D3C3D /* PersonGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A17A4319E50DDF002D3C3D /* PersonGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		B5A17A2C19E45FB0002D3C3D /* Kahn InfectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kahn InfectionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A17A3119E45FB0002D3C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5A17A3219E45FB0002D3C3D /* Kahn_InfectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kahn_InfectionTests.swift; sourceTree = "<group>"; };
+		B5A17A3C19E45FC7002D3C3D /* PersonOfLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonOfLetters.swift; sourceTree = "<group>"; };
+		B5A17A3F19E4CDF5002D3C3D /* SwiftRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRandom.swift; sourceTree = "<group>"; };
+		B5A17A4119E4D54B002D3C3D /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		B5A17A4319E50DDF002D3C3D /* PersonGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +87,9 @@
 			children = (
 				B5A17A1C19E45FB0002D3C3D /* AppDelegate.swift */,
 				B5A17A1E19E45FB0002D3C3D /* ViewController.swift */,
-				B5A17A2019E45FB0002D3C3D /* Main.storyboard */,
-				B5A17A2319E45FB0002D3C3D /* Images.xcassets */,
-				B5A17A2519E45FB0002D3C3D /* LaunchScreen.xib */,
+				B5A17A4119E4D54B002D3C3D /* GraphView.swift */,
+				B5A17A4319E50DDF002D3C3D /* PersonGraph.swift */,
+				B5A17A3C19E45FC7002D3C3D /* PersonOfLetters.swift */,
 				B5A17A1A19E45FB0002D3C3D /* Supporting Files */,
 			);
 			path = "Kahn Infection";
@@ -90,6 +98,10 @@
 		B5A17A1A19E45FB0002D3C3D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B5A17A2019E45FB0002D3C3D /* Main.storyboard */,
+				B5A17A2319E45FB0002D3C3D /* Images.xcassets */,
+				B5A17A2519E45FB0002D3C3D /* LaunchScreen.xib */,
+				B5A17A3F19E4CDF5002D3C3D /* SwiftRandom.swift */,
 				B5A17A1B19E45FB0002D3C3D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -212,7 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A17A4219E4D54B002D3C3D /* GraphView.swift in Sources */,
+				B5A17A3D19E45FC7002D3C3D /* PersonOfLetters.swift in Sources */,
 				B5A17A1F19E45FB0002D3C3D /* ViewController.swift in Sources */,
+				B5A17A4419E50DDF002D3C3D /* PersonGraph.swift in Sources */,
+				B5A17A4019E4CDF6002D3C3D /* SwiftRandom.swift in Sources */,
 				B5A17A1D19E45FB0002D3C3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +421,7 @@
 				B5A17A3819E45FB0002D3C3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5A17A3919E45FB0002D3C3D /* Build configuration list for PBXNativeTarget "Kahn InfectionTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +430,7 @@
 				B5A17A3B19E45FB0002D3C3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
