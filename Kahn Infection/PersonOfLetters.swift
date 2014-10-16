@@ -24,7 +24,11 @@ import UIKit
 		}
 	}
 
-	func infectDoyens() {
+	public init() {
+		
+	}
+
+	public func infectDoyens() {
 		for doyen in doyens {
 			if unlimitedInfection == false {
 				doyen.unlimitedInfection = false
@@ -36,7 +40,7 @@ import UIKit
 		}
 	}
 
-	func infectAbecedarians() {
+	public func infectAbecedarians() {
 		for abecedarian in abecedarians {
 			if unlimitedInfection == false {
 				abecedarian.unlimitedInfection = false
@@ -48,7 +52,7 @@ import UIKit
 		}
 	}
 
-	func addAbecedarian(newAbecedarian: PersonOfLetters) {
+	public func addAbecedarian(newAbecedarian: PersonOfLetters) {
 		// update infection strain appropriately
 		if newAbecedarian.infectionStrain < infectionStrain {
 			newAbecedarian.infectionStrain = infectionStrain
@@ -59,7 +63,7 @@ import UIKit
 		abecedarians.append(newAbecedarian)
 	}
 
-	func addDoyen(newDoyen: PersonOfLetters) {
+	public func addDoyen(newDoyen: PersonOfLetters) {
 		// update infection strain appropriately
 		if newDoyen.infectionStrain < infectionStrain {
 			newDoyen.infectionStrain = infectionStrain

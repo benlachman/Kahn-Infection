@@ -27,7 +27,7 @@ private let _maximumNumberOfGraphLevels = Int.random(lower:3, upper:8) // 3 - 8 
 		buildGraph(size: size)
 	}
 
-	// MARK: - Infection algorithm methods
+	// MARK: - Infection Algorithm Methods
 
 	public func totalInfection(startingWithPerson person: PersonOfLetters) {
 		person.infectionStrain = ++infectionStrain

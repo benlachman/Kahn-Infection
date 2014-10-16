@@ -18,8 +18,6 @@ class Kahn_InfectionTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-
-
     }
     
     override func tearDown() {
@@ -38,7 +36,12 @@ class Kahn_InfectionTests: XCTestCase {
 			numberOfPeople += doyen.subgraphCount()
 		}
 
-		XCTAssertEqualWithAccuracy(Float(peopleToCreate), Float(numberOfPeople), 30, "Didn't create the right amount of people")
+		XCTAssertEqualWithAccuracy(Float(peopleToCreate), Float(numberOfPeople), Float(peopleToCreate)/0.2, "Didn't create the right amount of people")
 	}
 
+	func testPerson() {
+		var person = PersonOfLetters()
+
+		XCTAssert(person.abecedarians.count == 0, "Created a person that isn't right.")
+	}
 }

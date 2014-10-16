@@ -20,7 +20,7 @@ extension CGPoint {
 		return sqrt((xDistance * xDistance) + (yDistance * yDistance)) // √(x^2+y^2)
 	}
 
-	// rotate point 60º clockwise around otherPoint to find a third point (equilateral to others)
+	// rotate point 60° clockwise around otherPoint to find a third point (equilateral to others)
 	// adapted from: http://stackoverflow.com/a/2862412/159801
 	func thirdPoint(otherPoint: CGPoint) -> CGPoint {
 		let sin60 = CGFloat(sin(60.0 * M_PI / 180.0))
